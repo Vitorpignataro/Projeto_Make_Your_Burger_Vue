@@ -1,0 +1,142 @@
+{
+  "ingredientes": {
+    "paes": [
+      {
+        "id": 1,
+        "tipo": "Brioche"
+      },
+      {
+        "id": 2,
+        "tipo": "Batata"
+      },
+      {
+        "id": 3,
+        "tipo": "Australiano"
+      },
+      {
+        "id": 4,
+        "tipo": "Integral"
+      }
+    ],
+    "carnes": [
+      {
+        "id": 1,
+        "tipo": "Maminha"
+      },
+      {
+        "id": 2,
+        "tipo": "Alcatra"
+      },
+      {
+        "id": 3,
+        "tipo": "Picanha"
+      },
+      {
+        "id": 4,
+        "tipo": "Veggie burger"
+      }
+    ],
+    "opcionais": [
+      {
+        "id": 1,
+        "tipo": "Bacon"
+      },
+      {
+        "id": 2,
+        "tipo": "Cheddar"
+      },
+      {
+        "id": 3,
+        "tipo": "Salame"
+      },
+      {
+        "id": 4,
+        "tipo": "Tomate"
+      },
+      {
+        "id": 4,
+        "tipo": "Cebola roxa"
+      },
+      {
+        "id": 4,
+        "tipo": "Pepino"
+      }
+    ]
+  },
+  "status": [
+    {
+      "id": 1,
+      "tipo": "Solicitado"
+    },
+    {
+      "id": 2,
+      "tipo": "Em produção"
+    },
+    {
+      "id": 3,
+      "tipo": "Finalizado"
+    }
+  ],
+  "burgers": [
+    {
+      "nome": "José Vitor Alves Pignataro",
+      "pao": "Brioche",
+      "carne": "Picanha",
+      "opcionais": [
+        "Bacon",
+        "Salame",
+        "Cebola roxa",
+        "Cheddar"
+      ],
+      "status": "Solicitado",
+      "id": 1
+    },
+    {
+      "nome": "Brenho",
+      "pao": "Australiano",
+      "carne": "Veggie burger",
+      "opcionais": [
+        "Bacon",
+        "Pepino"
+      ],
+      "status": "Solicitado",
+      "id": 2
+    },
+    {
+      "nome": "Murinho",
+      "pao": "Australiano",
+      "carne": "Picanha",
+      "opcionais": [
+        "Bacon",
+        "Pepino",
+        "Tomate",
+        "Salame"
+      ],
+      "status": "Solicitado",
+      "id": 3
+    },
+    {
+      "nome": "Carlito",
+      "pao": "Brioche",
+      "carne": "Alcatra",
+      "opcionais": [
+        "Bacon",
+        "Cebola roxa",
+        "Tomate"
+      ],
+      "status": "Solicitado",
+      "id": 4
+    },
+    {
+      "nome": "Morcilla",
+      "pao": "Integral",
+      "carne": "Maminha",
+      "opcionais": [
+        "Pepino",
+        "Cebola roxa"
+      ],
+      "status": "Solicitado",
+      "id": 5
+    }
+  ]
+}
