@@ -12,7 +12,7 @@
             <div id="burger-table-rows">
                 <div class="burger-table-row" v-for="burger in burgers" :key="burger.id">
                     <div class="order-number">{{burger.id}}</div>
-                    <div>{{burger.name}}</div>
+                    <div>{{burger.nome}}</div>
                     <div>{{burger.pao}}</div>
                     <div>{{burger.carne}}</div>
                     <div>
@@ -24,7 +24,10 @@
                     </div>
                     <div>
                         <select name="status" class="status">
-                            <option value="">Selecione</option>
+                            <!-- Fazemos a comparação para ver se o status é o mesmo para exibir o que já está vindo então do cadastro -->
+                            <option v-for="statusbd in status" :key="statusbd.id" value="statusbd.tipo" :selected="burger.status == statusbd.tipo">
+                                {{statusbd.tipo}}
+                            </option>
                         </select>
                         <button class="delete-btn">Cancelar</button>
                     </div>
@@ -48,10 +51,18 @@ export default {
         this.getPedidos()
     },
     methods:{
+        //Função que puxa todos os pedidos e chama uma outra função para resgatar o status
         async getPedidos(){
             const req = await fetch("http://localhost:3000/burgers");
             const data = await req.json();
             this.burgers = data
+
+            this.getStatus()
+        },
+        async getStatus(){
+            const reqStatus = await fetch("http://localhost:3000/status")
+            const dataStatus = await reqStatus.json()
+            this.status = dataStatus;
 
         }
     }
