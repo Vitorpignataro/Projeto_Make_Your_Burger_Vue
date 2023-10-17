@@ -103,19 +103,6 @@
       "id": 2
     },
     {
-      "nome": "Murinho",
-      "pao": "Australiano",
-      "carne": "Picanha",
-      "opcionais": [
-        "Bacon",
-        "Pepino",
-        "Tomate",
-        "Salame"
-      ],
-      "status": "Solicitado",
-      "id": 3
-    },
-    {
       "nome": "Carlito",
       "pao": "Brioche",
       "carne": "Alcatra",
@@ -137,6 +124,18 @@
       ],
       "status": "Solicitado",
       "id": 5
+    },
+    {
+      "nome": "Alanzoka",
+      "pao": "Brioche",
+      "carne": "Maminha",
+      "opcionais": [
+        "Cheddar",
+        "Salame",
+        "Bacon"
+      ],
+      "status": "Solicitado",
+      "id": 6
     }
   ]
 }

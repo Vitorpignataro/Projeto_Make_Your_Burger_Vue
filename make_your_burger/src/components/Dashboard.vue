@@ -29,7 +29,7 @@
                                 {{statusbd.tipo}}
                             </option>
                         </select>
-                        <button class="delete-btn">Cancelar</button>
+                        <button class="delete-btn" @click="deleteBurger(burger.id)">Cancelar</button>
                     </div>
                 </div>
             </div>
@@ -63,6 +63,16 @@ export default {
             const reqStatus = await fetch("http://localhost:3000/status")
             const dataStatus = await reqStatus.json()
             this.status = dataStatus;
+
+        },
+        //No json server isso seria como deletar um item
+        async deleteBurger(id){
+            const reqDelete = await fetch(`http://localhost:3000/burgers/${id}`,{
+                method: "DELETE"
+            });
+
+            const resDelete = await reqDelete.json();
+            this.getPedidos()
 
         }
     }
