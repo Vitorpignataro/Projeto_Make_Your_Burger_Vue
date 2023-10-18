@@ -1,5 +1,6 @@
 <template>
     <div id="burger-table">
+        <Message :msg="msg" v-show="msg"/>
         <div>
             <div id="burger-table-heading">
                 <div class="order-id">#:</div>
@@ -23,9 +24,9 @@
                         </ul>
                     </div>
                     <div>
-                        <select name="status" class="status">
+                        <select name="status" class="status" @change="updatedBurger($event, burger.id)">
                             <!-- Fazemos a comparação para ver se o status é o mesmo para exibir o que já está vindo então do cadastro -->
-                            <option v-for="statusbd in status" :key="statusbd.id" value="statusbd.tipo" :selected="burger.status == statusbd.tipo">
+                            <option v-for="statusbd in status" :key="statusbd.id" :value="statusbd.tipo" :selected="burger.status == statusbd.tipo">
                                 {{statusbd.tipo}}
                             </option>
                         </select>
@@ -38,13 +39,20 @@
 </template>
 
 <script>
+import Message from './Message.vue'
+
+
 export default {
     name: "Dashboard",
+    components:{
+        Message
+    },
     data() {
         return{
             burgers: null,
             burger_id: null,
-            status:[]
+            status:[],
+            msg: null
         }
     },
     mounted(){
@@ -73,6 +81,39 @@ export default {
 
             const resDelete = await reqDelete.json();
             this.getPedidos()
+
+            //Define a mensagem
+            this.msg = `Pedido nº ${id} foi removido com sucesso!`;
+
+            //Deleta a mensagem após um tempo
+            setTimeout(() => {
+                this.msg = null
+            }, 5000);
+
+        },
+        async updatedBurger(event, id){
+            const option = event.target.value;
+            const dataJson = JSON.stringify({status: option});
+
+            const reqUpdate = await fetch(`http://localhost:3000/burgers/${id}`,{
+                method: "PATCH",
+                headers: {"Content-Type":"application/json"},
+                body: dataJson
+            });
+
+
+            const resUpdate = await reqUpdate.json();
+
+
+             //Define a mensagem
+            this.msg = `Pedido nº ${resUpdate.id} foi alterado para ${resUpdate.status}!`;
+
+            //Deleta a mensagem após um tempo
+            setTimeout(() => {
+                this.msg = null
+            }, 5000);
+
+
 
         }
     }

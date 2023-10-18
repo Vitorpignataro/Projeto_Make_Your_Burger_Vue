@@ -88,7 +88,7 @@
         "Cebola roxa",
         "Cheddar"
       ],
-      "status": "Solicitado",
+      "status": "Em produção",
       "id": 1
     },
     {
@@ -99,7 +99,7 @@
         "Bacon",
         "Pepino"
       ],
-      "status": "Solicitado",
+      "status": "Em produção",
       "id": 2
     },
     {
@@ -124,18 +124,6 @@
       ],
       "status": "Solicitado",
       "id": 5
-    },
-    {
-      "nome": "Alanzoka",
-      "pao": "Brioche",
-      "carne": "Maminha",
-      "opcionais": [
-        "Cheddar",
-        "Salame",
-        "Bacon"
-      ],
-      "status": "Solicitado",
-      "id": 6
     }
   ]
 }
